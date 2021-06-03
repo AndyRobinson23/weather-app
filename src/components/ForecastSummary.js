@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const ForecastSummary = (props) => {
   const { date, description, icon, temperature } = props;
   return (
-    <div className="forecast-summary">
+    <div className="forecast-summary" data-testid="forecast-summary">
       <div className="forecast-summary__date">{date}</div>
       <div className="forecast-summary__icon" data-testid="forecast-icon">
         {icon}
@@ -17,8 +17,6 @@ const ForecastSummary = (props) => {
   );
 };
 
-export default ForecastSummary;
-
 ForecastSummary.propTypes = {
   date: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
@@ -28,3 +26,5 @@ ForecastSummary.propTypes = {
     max: PropTypes.number,
   }).isRequired,
 };
+
+export default ForecastSummary;
