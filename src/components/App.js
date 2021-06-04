@@ -1,6 +1,6 @@
+/* eslint-disable prettier/prettier */
 import { PropTypes } from "prop-types";
 import React from "react";
-import css from "../styles/index.css";
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 
