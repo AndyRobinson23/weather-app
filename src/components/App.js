@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { PropTypes } from "prop-types";
 import React from "react";
+import { PropTypes } from "prop-types";
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 import "../styles/App.css";
@@ -9,7 +9,7 @@ function App(props) {
   // eslint-disable-next-line no-unused-vars
   const { forecasts, location } = props;
   return (
-    <div className="App">
+    <div className="weather-app">
       <LocationDetails
         // eslint-disable-next-line react/destructuring-assignment
         city={props.location.city}
