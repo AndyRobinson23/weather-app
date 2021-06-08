@@ -1,28 +1,29 @@
 /* eslint-disable prettier/prettier */
 import React from "react";
 import PropTypes from "prop-types";
+import moment from "moment";
 
-const ForecastDetails = (forecast) => {
+const ForecastDetails = ({ forecast }) => {
+  const { date, temperature, wind, humidity } = forecast;
   return (
     <div className="forecast-details">
       <div className="forecast-summary__date">
         {moment(date).format("ddd Do MMM")}
       </div>
       <div className="forecast-summary__temperature">
-        {temperature.min} &deg;C
+        Min Temperature: {temperature.min} &deg;C Max Temperature:{" "}
         {temperature.max} &deg;C
       </div>
-      <div className="forecast-summary__humidity">{humidity}</div>
+      <div className="forecast-summary__humidity">Humidity: {humidity}</div>
       <div className="forecast-summary__wind">
-        {wind.speed}
-        {wind.direction}
+        Wind: {wind.speed}mph Wind Direction: {wind.direction}
       </div>
     </div>
   );
 };
 
 ForecastDetails.propTypes = {
-  forecasts: PropTypes.shape({
+  forecast: PropTypes.shape({
     date: PropTypes.number.isRequired,
     temperature: PropTypes.shape({
       min: PropTypes.number,
@@ -35,3 +36,5 @@ ForecastDetails.propTypes = {
     humidity: PropTypes.number,
   }).isRequired,
 };
+
+export default ForecastDetails;
