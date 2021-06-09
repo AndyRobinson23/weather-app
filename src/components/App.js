@@ -12,6 +12,9 @@ const App = ({ forecasts, location }) => {
   const selectedForecast = forecasts.find(
     (forecast) => forecast.date === selectedDate
   );
+  const handleForecastSelect = (date) => {
+    setSelectedDate(date);
+  };
 
   return (
     <div className="weather-app">
@@ -22,7 +25,10 @@ const App = ({ forecasts, location }) => {
         country={location.country}
         className="location-details"
       />
-      <ForecastSummaries forecasts={forecasts} />
+      <ForecastSummaries
+        forecasts={forecasts}
+        onForecastSelect={handleForecastSelect}
+      />
       <ForecastDetails forecast={selectedForecast} />
     </div>
   );
