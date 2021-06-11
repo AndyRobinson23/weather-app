@@ -29,7 +29,7 @@ describe("ForecastSummary", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it("render correct values for props", () => {
+  it("renders correct values for props", () => {
     const { getByText, getByTestId } = render(
       <ForecastSummary
         date={validProps.date}
